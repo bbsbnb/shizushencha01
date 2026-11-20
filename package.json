@@ -6,6 +6,7 @@
   "description": "工程施工组织设计（方案）审核智能体 · 前后端可视化交互项目",
   "scripts": {
     "dev": "concurrently -n api,web -c blue,green \"node server/server.js\" \"vite\"",
+    "prebuild": "node scripts/install-python-deps.js",
     "build": "vite build",
     "start": "node server/server.js",
     "setup": "npm install && vite build"
