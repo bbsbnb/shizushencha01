@@ -1,0 +1,10 @@
+node_modules/
+dist/
+server/uploads/
+.playwright-cli/
+cloudflared.exe
+cf-url.txt
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
