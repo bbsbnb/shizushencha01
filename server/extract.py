@@ -40,8 +40,11 @@ def extract_doc(path):
 def extract_pdf(path):
     try:
         from pypdf import PdfReader
-    except Exception:
-        from PyPDF2 import PdfReader
+    except ImportError:
+        try:
+            from PyPDF2 import PdfReader
+        except ImportError as e:
+            raise RuntimeError("PDF 提取依赖未安装，请在部署构建步骤运行：python -m pip install -r requirements.txt") from e
     reader = PdfReader(path)
     parts = []
     for page in reader.pages:

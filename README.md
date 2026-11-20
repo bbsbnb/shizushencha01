@@ -28,8 +28,14 @@ construction-audit-app/
 ```bash
 cd construction-audit-app
 npm install
+python -m pip install -r requirements.txt
 npm run build        # 构建前端到 dist/
 npm start            # 生产模式：http://localhost:3001（后端同时托管 dist）
+```
+
+部署平台的构建命令需同时安装 Node.js 与 Python 依赖，例如：
+```bash
+npm ci && npm run build && python -m pip install -r requirements.txt
 ```
 
 或开发模式（热更新）：
