@@ -155,6 +155,57 @@ nav { padding: 14px 10px; display: flex; flex-direction: column; gap: 4px; flex:
 /* 导出 */
 .export-actions { display: flex; gap: 12px; margin: 14px 0; }
 
+@media (max-width: 720px) {
+  html, body, #root { min-height: 100%; height: auto; }
+  .app { display: block; min-height: 100dvh; height: auto; overflow: visible; }
+  .sidebar { position: sticky; top: 0; z-index: 10; width: 100%; }
+  .brand { min-height: 56px; padding: 8px 104px 8px 14px; gap: 9px; }
+  .brand-mark { width: 38px; height: 38px; font-size: 14px; }
+  .brand-title { font-size: 14px; }
+  .brand-sub { font-size: 11px; }
+  nav { flex: none; flex-direction: row; gap: 4px; overflow-x: auto; padding: 6px 10px 8px; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  .nav-item { flex: 0 0 auto; gap: 6px; padding: 9px 11px; font-size: 13px; white-space: nowrap; }
+  .nav-ico { width: auto; }
+  .side-foot { position: absolute; top: 8px; right: 10px; padding: 0; border: 0; }
+  .mini-btn { width: auto; min-height: 38px; padding: 7px 10px; }
+  .settings { position: fixed; top: 108px; left: 10px; right: 10px; z-index: 20; max-height: calc(100dvh - 120px); overflow-y: auto; background: #1f3a5f; box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+
+  .main { min-height: calc(100dvh - 108px); overflow: visible; }
+  .topbar { gap: 10px; padding: 13px 14px; }
+  .topbar h1 { font-size: 18px; }
+  .topbar .sub { max-width: 60vw; line-height: 1.45; }
+  .topbar .btn { flex: 0 0 auto; padding: 9px 12px; font-size: 13px; white-space: nowrap; }
+  .status-area { height: auto; min-height: 0; max-height: 160px; overflow-y: auto; }
+  .status-area:empty { height: 0; }
+  .progress-wrap { padding: 10px 14px 0; }
+  .alert { margin: 10px 14px 0; padding: 9px 11px; line-height: 1.5; overflow-wrap: anywhere; }
+  .content { overflow: visible; padding: 14px 12px calc(24px + env(safe-area-inset-bottom)); }
+  .card { padding: 14px; border-radius: 8px; }
+  .card-h { line-height: 1.5; }
+  .dropzone { min-height: 150px; padding: 24px 12px; overflow-wrap: anywhere; }
+  .dz-sub { line-height: 1.5; }
+  .file-list li { flex-wrap: wrap; gap: 8px; padding: 10px; }
+  .file-name { min-width: 0; overflow-wrap: anywhere; }
+  .file-size { flex: 0 0 auto; }
+  .focus-box textarea { min-height: 76px; font-size: 16px; }
+
+  .sev-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .sev-cell { min-width: 0; padding: 10px 6px; }
+  .sev-num { font-size: 26px; }
+  .sev-label { font-size: 12px; }
+  .dim .dim-h { flex-wrap: wrap; }
+  .oc-row { gap: 8px; align-items: flex-start; }
+  .oc-label { width: 68px; }
+  .oc-value { min-width: 0; overflow-wrap: anywhere; }
+  .chat-wrap { height: auto; min-height: calc(100dvh - 230px); }
+  .chat-box { min-height: 42vh; }
+  .chat-input { align-items: stretch; }
+  .chat-input textarea { min-width: 0; min-height: 44px; resize: vertical; font-size: 16px; }
+  .chat-input .btn { flex: 0 0 auto; }
+  .export-actions { flex-wrap: wrap; }
+}
+
 @media print {
   .sidebar, .topbar, .chat-input, .export-actions, .focus-box, .dropzone, .file-list { display: none !important; }
   .app { display: block; }
